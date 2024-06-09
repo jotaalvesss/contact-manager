@@ -52,3 +52,33 @@ def excluir_paciente():
 
             print("O paciente não foi encontrado.")
             break
+
+def listar_pacientes():
+    if not pacientes:
+        print("Nenhum paciente cadastrado.")
+        return
+    
+    for cpf, dados in pacientes.items():
+        print(f"CPF: {cpf}")
+        for chave, valor in dados.items():
+            print(f"{chave}: {valor}")
+        print("-----")
+
+while True:
+    print("\n1. Adicionar paciente")
+    print("2. Excluir paciente")
+    print("3. Listar pacientes")
+    print("4. Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == '1':
+        adicionar_paciente()
+    elif opcao == '2':
+        excluir_paciente()
+    elif opcao == '3':
+        listar_pacientes()
+    elif opcao == '4':
+        break
+    else:
+        print("Opção inválida. Tente novamente.")
