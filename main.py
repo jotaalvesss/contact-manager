@@ -35,3 +35,20 @@ def adicionar_paciente():
 
         print("Novo paciente cadastrado com sucesso!")
         break
+
+def excluir_paciente():
+
+    while True:
+
+
+        cpf = input("Digite o CPF do paciente a ser removido: ")
+
+        if cpf in pacientes and pacientes[cpf]:
+            pacientes[cpf] = False
+            print("Paciente excluído com sucesso!")
+            break
+
+        else:
+
+            print("O paciente não foi encontrado.")
+            break
